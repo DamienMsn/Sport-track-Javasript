@@ -1,0 +1,21 @@
+extends layout
+
+block content
+    .connexion
+    h1 Connexion
+    form(action='/connect' method='post')
+        div
+        label(for='email') Votre e-mail
+        br
+        input#email(type='email' name='email' placeholder='monadresse@gmail.com' required='')
+        div
+        label(for='password') Votre mot de passe :
+        br
+        input#pass(type='password' name='pass' required='')
+        div
+        br
+        input(type='submit' value='Connexion')
+
+    br
+    form(action='/users')
+        button(type='submit') Inscription

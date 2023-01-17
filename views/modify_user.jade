@@ -1,0 +1,38 @@
+extends layout
+
+block content
+    form(action='/modify_user' method='post')
+        h1 Modification du compte
+        p
+            label(for='nom') Votre nom
+            input#nom(type='text' name='nom' value=data.nom )
+        p
+            label(for='prenom') Votre prenom
+            input#prenom(type='text' name='prenom' value=data.prenom )
+        p
+            label(for='date_naissance') Votre date de naissance
+            input.form-control(type='date' name='date_naissance' min='1900-01-01' max='2100-01-01' value=data.date_naissance )
+        fieldset
+            legend Sexe
+            p
+                label M 
+                input#sexeM(type='radio' name='sexe' disabled='')
+                label F 
+                input#sexeF(type='radio' name='sexe' disabled='')
+        p
+            label(for='taille') Taille (en metre)
+            input#taille(type='number' name='taille' min='0' max='250' step='1' value=data.taille )
+        p
+            label(for='poids') Poids (en kg)
+            input#poids(type='number' name='poids' min='0' max='200' step='1' value=data.poids )
+        p
+            label(for='email') Votre e-mail
+            input#email(type='email' name='email' value=data.email  disabled='')
+        p
+            label(for='password') Votre mot de passe (8 characters minimum) :
+            input#pass(type='password' name='pass' minlength='8' value=data.mdp  disabled='')
+        p
+            button(type='submit') Enregistrer
+
+    form(action='/home')
+        button(type='submit') Retour

@@ -1,0 +1,29 @@
+extends layout
+
+block content
+    h1 Activités de #{data[0].prenom} #{data[0].nom}
+
+    table(border='1')
+        thead
+            tr
+                th Date
+                th Activité
+                th Durée (en minute)
+                th Distance (en mètre)
+                th Cardio fréquence Min
+                th Cardio fréquence Max
+                th Cardio fréquence Moy
+        tbody
+            each val in data
+             tr
+                td= val.date
+                td= val.description
+                td= val.duree
+                td= val.distance_parcourue
+                td= val.cardio_freq_min
+                td= val.cardio_freq_max
+                td= val.cardio_freq_moy
+
+    br
+    form(action='/home')
+        button(type='submit') Retour

@@ -1,0 +1,47 @@
+extends layout
+
+block content
+    p.creation.de.compte 
+    h1 Creation de compte
+    form(action='/users' method='post')
+        p
+            label(for='nom') Votre nom
+            br
+            input#nom(type='text' name='nom' placeholder='Martin' required='')
+        p
+            label(for='prenom') Votre prenom
+            br
+            input#prenom(type='text' name='prenom' placeholder='Lucas' required='')
+        p
+            label(for='date_naissance') Votre date de naissance
+            br
+            input.form-control(type='date' name='date_naissance' min='1900-01-01' max='2100-01-01' required='')
+        fieldset
+            legend Sexe
+            p
+            label M 
+            input#sexeM(type='radio' name='sexe' value='M' required='')
+            label F 
+            input#sexeF(type='radio' name='sexe' value='F')
+        p
+            label(for='taille') Taille (en metre)
+            br
+            input#taille(type='number' name='taille' min='0' max='250' step='1' placeholder='170' required='')
+        p
+            label(for='poids') Poids (en kg)
+            br
+            input#poids(type='number' name='poids' min='0' max='200' step='1' placeholder='75' required='')
+        p
+            label(for='email') Votre e-mail
+            br
+            input#email(type='email' name='email' placeholder='monadresse@gmail.com' required='')
+        p
+            label(for='password') Votre mot de passe (8 characters minimum) :
+            br
+            input#pass(type='password' name='pass' minlength='8' required='')
+        p
+            input(type='submit', value='Enregistrer') 
+        p
+
+    form
+        input(type='button' value='Retour' onclick='history.go(-1)')
